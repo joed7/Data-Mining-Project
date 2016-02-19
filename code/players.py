@@ -46,13 +46,19 @@ for char in string.ascii_lowercase:
         
         #print col[0]     
         u = col[0].find_all('a')[0].get('href')
-        if ishof:
-            o1.write(u+"\n")
+        #if ishof:
+            #o1.write(u+"\n")
+            
+        print u
             
         if isactive:
             o3.write(u+"\n") 
         else:
-            o2.write(u+"\n")
+            if ishof:
+                o1.write(u+"\n")
+            else:
+                o2.write(u+"\n")
+                    
                    
         #print 
 

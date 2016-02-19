@@ -3,9 +3,9 @@ import os
 import re
 from bs4 import BeautifulSoup
 
-data_path1 = '../urls/active/'
-data_path2 = '../urls/retired/'
-data_path3 = '../urls/hof/'
+data_path1 = '../urls/backup/active/'
+data_path2 = '../urls/backup/retired/'
+data_path3 = '../urls/backup/hof/'
 
 write_path1 = '../data/active.csv'
 write_path2 = '../data/retired.csv'
@@ -32,7 +32,7 @@ def write(write_path,output):
 def updateDict(player):
     global counter
     d[counter] = player
-    counter = counter + 1
+    counter = counter + 1                                                                                           
     return counter;
 #f = open(data_path)
 
