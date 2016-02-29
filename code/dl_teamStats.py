@@ -4,8 +4,8 @@ from bs4 import BeautifulSoup
 
 teams = ['TOR', 'SAC', 'NYK', 'MEM', 'OKC', 'GSW', 'HOU', 'CHA',
        'MIL', 'MIN', 'DET', 'DEN', 'ORL', 'POR', 'DAL', 'NOP', 'PHI',
-       'LAC', 'SAS', 'IND', 'BOS', 'NOH', 'UTA', 'PHO', 'CHI', 'CLE',
-       'BRK', 'NOK', 'MIA', 'NJN', 'ATL', 'LAL', 'WAS', 'CHO', 'SEA']
+       'LAC', 'SAS', 'IND', 'BOS','UTA', 'PHO', 'CHI', 'CLE',
+       'BRK',  'MIA', 'ATL', 'LAL', 'WAS']
 
 
 
