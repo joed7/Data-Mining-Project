@@ -119,14 +119,14 @@ print input_data[k_means.labels_ == 4].sort('MP',ascending=False)[['pname','PTS'
 
 '''
 
-
+pd.DataFrame(descale(input_mat,k_means.cluster_centers_)).to_csv('../active_player_cluster/cluster_centroid')
 
 print 'cluster 1 size =' + str(len(input_data[k_means.labels_ == 0]))
 
 distcluster1 = distdf1[k_means.labels_ == 0]
 cluster1 = input_data_per_minute[k_means.labels_ == 0]
 print pd.concat([cluster1,distcluster1],axis=1).sort('dist')[['pid','pname','ppm','rpm','apm','MP']]
-pd.concat([cluster1,distcluster1],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('cluster1.csv')
+pd.concat([cluster1,distcluster1],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('../active_player_cluster/cluster1.csv')
 
 
 print 'cluster 2 size =' + str(len(input_data[k_means.labels_ == 1]))
@@ -134,7 +134,7 @@ print 'cluster 2 size =' + str(len(input_data[k_means.labels_ == 1]))
 distcluster2 = distdf1[k_means.labels_ == 1]
 cluster2 = input_data_per_minute[k_means.labels_ == 1]
 print pd.concat([cluster2,distcluster2],axis=1).sort('dist')[['pid','pname','ppm','rpm','apm','MP']]
-pd.concat([cluster2,distcluster2],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('cluster2.csv')
+pd.concat([cluster2,distcluster2],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('../active_player_cluster/cluster2.csv')
 
 
 print 'cluster 3 size =' + str(len(input_data[k_means.labels_ == 2]))
@@ -142,7 +142,7 @@ print 'cluster 3 size =' + str(len(input_data[k_means.labels_ == 2]))
 distcluster3 = distdf1[k_means.labels_ == 2]
 cluster3 = input_data_per_minute[k_means.labels_ == 2]
 print pd.concat([cluster3,distcluster3],axis=1).sort('dist')[['pid','pname','ppm','rpm','apm','MP']]
-pd.concat([cluster3,distcluster3],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('cluster3.csv')
+pd.concat([cluster3,distcluster3],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('../active_player_cluster/cluster3.csv')
 
 
 
@@ -151,14 +151,14 @@ print 'cluster 4 size =' + str(len(input_data[k_means.labels_ == 3]))
 distcluster4 = distdf1[k_means.labels_ == 3]
 cluster4 = input_data_per_minute[k_means.labels_ == 3]
 print pd.concat([cluster4,distcluster4],axis=1).sort('dist')[['pid','pname','ppm','rpm','apm','MP']]
-pd.concat([cluster4,distcluster4],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('cluster4.csv')
+pd.concat([cluster4,distcluster4],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('../active_player_cluster/cluster4.csv')
 
 print 'cluster 5 size =' + str(len(input_data[k_means.labels_ == 4]))
 
 distcluster5 = distdf1[k_means.labels_ == 4]
 cluster5 = input_data_per_minute[k_means.labels_ == 4]
 print pd.concat([cluster5,distcluster5],axis=1).sort('dist')[['pid','pname','ppm','rpm','apm','MP']]
-pd.concat([cluster5,distcluster5],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('cluster5.csv')
+pd.concat([cluster5,distcluster5],axis=1).sort('MP',ascending=False)[['pid','pname','ppm','rpm','apm','MP','dist']].to_csv('../active_player_cluster/cluster5.csv')
 
 '''
 
