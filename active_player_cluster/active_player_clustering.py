@@ -11,17 +11,9 @@ import sys
 import scipy.spatial.distance as mod
 
 
-def scale_linear_bycolumn(rawpoints, high=100.0, low=0.0):
+def scale(rawpoints, high=100.0, low=0.0):
     mins = np.min(rawpoints, axis=0)
     maxs = np.max(rawpoints, axis=0)
-    rng = maxs - mins
-    return high - (((high - low) * (maxs - rawpoints)) / rng)
-
-
-def scale2(rawpoints, high=100.0, low=0.0):
-    mins = np.min(rawpoints, axis=0)
-    maxs = np.max(rawpoints, axis=0)
-    
     
     rng = maxs - mins
     return (rawpoints - mins)*100.0 / rng
@@ -34,8 +26,6 @@ def descale(rawpoints,scaled_points, high=100.0, low=0.0):
     rng = maxs - mins
     
     return (scaled_points * rng/100) + mins 
-    
-
     
 
 active_player_data = pd.read_csv('../data/active.csv')
@@ -58,24 +48,15 @@ input_data_per_minute = input_data[['pid','pname','ppm','rpm','apm','bpm','FG%',
 input_data_per_minute.fillna(0,inplace=True)
 
 
-
-
-
 print 'training'
 
 
 input_mat = input_data_per_minute.values[:,2:5]
 
-#print input_mat
-
-scaled_input_mat = scale2(input_mat)
-
-#print descale(input_mat, scaled_input_mat)
+scaled_input_mat = scale(input_mat)
 
 
 k_means = cluster.KMeans(n_clusters=5)
-
-#print input_mat
 
 print 'training start'
 k_means.fit(scaled_input_mat)
